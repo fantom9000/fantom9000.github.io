@@ -1,0 +1,150 @@
+
+
+body {
+    color: #000;
+    font-family: "Helvetica Neue";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.18px;
+
+margin: 0;
+}
+
+.page-header {
+    width: 100%;
+    max-width: 967px;
+    margin: 0 auto;
+    padding: 14px 16px;
+}
+
+.main-nav {
+    display:flex;
+}
+
+.logo {
+    width: 60px;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav .logo {
+    margin-right: 224px;
+}
+
+.site-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+    margin: 0;
+    padding: 0;
+    width: 400px;
+    list-style: none;
+    margin-right: auto;
+}
+
+.site-navigation-item a {
+    color: #000;
+    text-decoration: none;
+}
+
+
+li a {
+    display: block;
+}
+
+.icons {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin-left: auto;
+}
+
+.hero {
+    width: 967px;
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 72px;
+}
+
+.hero h1 {
+margin: 0;
+padding: 0;
+color: #000;
+font-family: "Neue Haas Grotesk Display Pro";
+font-size: 141px;
+font-style: normal;
+font-weight: 900;
+line-height: normal;
+letter-spacing: -4.23px;
+position: relative;
+left: -6px;
+top: -28px;
+margin-bottom: 154px;
+}
+
+.hero h2 {
+    margin: 0;
+    color: #000;
+font-size: 40px;
+font-style: normal;
+font-weight: 500;
+line-height: 100%; /* 40px */
+letter-spacing: -0.4px;
+margin-bottom: 96px;
+}
+
+.cta-button {
+    margin: 0;
+    color: #000;
+font-size: 30px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.3px;
+padding: 10px 47px 13px 47px;
+border: 1px solid #000;
+background: #FFF;
+}
+
+.hero a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.hero img {
+    display: block;
+    margin: 0;
+}
+
+.page-footer {
+    width: 100%;
+    max-width: 967px;
+    margin: 0 auto;
+    padding: 14px 16px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-container p {
+    margin: 0;
+}
+
+.social {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+}
+
+.social a {
+    color: #000;
+    text-decoration: none;
+}
