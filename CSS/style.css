@@ -1,4 +1,11 @@
-
+@font-face {
+    font-family: 'Neue Haas Grotesk Display Pro';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url(/NeueHaasDisplayBlack.woff2) format('woff2'),
+      url(/NeueHaasDisplayBlack.woff) format('woff');
+  }
 
 body {
     color: #000;
@@ -75,7 +82,7 @@ li a {
 margin: 0;
 padding: 0;
 color: #000;
-font-family: "Neue Haas Grotesk Display Pro";
+font-family: Neue Haas Grotesk Display Pro, sans-serif;
 font-size: 141px;
 font-style: normal;
 font-weight: 900;
