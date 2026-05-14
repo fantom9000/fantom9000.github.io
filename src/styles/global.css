@@ -13,7 +13,7 @@
   --type-body:    clamp(16px, calc(0.833vw + 8px), 20px);
   --type-section: clamp(28px, 2.917vw, 42px);
   --type-number:  clamp(64px, calc(3.333vw + 32px), 80px);
-  --type-lead:    clamp(24px, calc(5.625vw - 22px), 59px);
+  --type-lead:    clamp(36px, calc(5.625vw - 22px), 59px);
   --space-grid:          clamp(8px, calc(2.5vw - 16px), 20px);
   --space-block:         clamp(30px, calc(2.083vw + 10px), 40px);
   --space-section:       clamp(58px, calc(3.542vw + 24px), 75px);
@@ -936,5 +936,11 @@ h3 {
 @media (max-width: 500px) {
   .hero-text h1 {
     line-height: 1.1;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: clamp(28px, calc(5vw + 12px), 36px);
   }
 }
