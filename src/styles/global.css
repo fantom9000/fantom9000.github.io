@@ -1,7 +1,15 @@
 @font-face {
-  font-family: "Inter";
-  src: url("/fonts/InterVariable.woff2") format("woff2-variations");
-  font-weight: 100 900;
+  font-family: "Inter Display";
+  src: url("/fonts/InterDisplay-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter Display";
+  src: url("/fonts/InterDisplay-Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -26,8 +34,8 @@
   --space-block:         clamp(30px, calc(2.083vw + 10px), 40px);
   --space-section:       clamp(58px, calc(3.542vw + 24px), 75px);
   --space-section-large: clamp(85px, calc(6.25vw + 25px), 115px);
-  --font-display: "Inter", Arial, sans-serif;
-  --font-text: "Inter", Arial, sans-serif;
+  --font-display: "Inter Display", Arial, sans-serif;
+  --font-text: "Inter Display", Arial, sans-serif;
   --case-radius: 12px;
 }
 
@@ -48,7 +56,6 @@ body {
   background: var(--color-page);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-optical-sizing: auto;
   text-rendering: optimizeLegibility;
 }
 
@@ -142,7 +149,7 @@ h3 {
   max-width: var(--content);
   font-size: var(--type-lead);
   line-height: 0.99;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
 }
 
 .hero-text--indent h1 {
@@ -200,7 +207,7 @@ h3 {
   display: block;
   font-size: var(--type-section);
   line-height: 0.98;
-  letter-spacing: 0;
+  letter-spacing: -0.03em;
 }
 
 .project-sidebar__meta {
@@ -367,7 +374,7 @@ h3 {
 .text-section h2 {
   font-size: var(--type-section);
   line-height: 0.98;
-  letter-spacing: 0;
+  letter-spacing: -0.03em;
 }
 
 .text-section p {
@@ -539,7 +546,7 @@ h3 {
   margin-bottom: 10px;
   font-size: var(--type-section);
   line-height: 0.98;
-  letter-spacing: 0;
+  letter-spacing: -0.03em;
 }
 
 .side-work__visual img {
