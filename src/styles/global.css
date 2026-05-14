@@ -768,6 +768,19 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .text-section {
+    row-gap: 0;
+    padding-bottom: 16px;
+  }
+
+  .text-section h2 {
+    margin-bottom: 0.3em;
+  }
+
+  .text-section p {
+    max-width: 90%;
+  }
+
   .concepts-mobile-row {
     grid-column: 1;
   }
