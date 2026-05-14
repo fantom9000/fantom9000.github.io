@@ -109,15 +109,31 @@ Previously: `case-image-tile`, `mobile-screen`, and `desktop-mobile-screens` use
 
 ## Fonts
 
-- **Inter 4.0 Variable** — единственный шрифт сайта. Self-hosted: `public/fonts/InterVariable.woff2` (~344 КБ, скачан с rsms.me, лицензия SIL OFL). Содержит все веса 100–900 + ось `opsz` (optical sizing 14–32) — то есть и обычный Inter (для UI/body), и Inter Display (для крупных кеглей) в одном файле.
-- Подключение в `src/styles/global.css` через `@font-face` с `format("woff2-variations")` и `font-display: swap`.
-- Preload в `src/layouts/BaseLayout.astro`:
+- **Inter Display 4.1** (статические Regular + Bold) — единственный шрифт сайта. Self-hosted, скачан с https://github.com/rsms/inter/releases (Inter-4.1.zip, файлы `extras/woff-hinted/InterDisplay-Regular.woff2` и `InterDisplay-Bold.woff2`). Лицензия SIL OFL.
+- Файлы: `public/fonts/InterDisplay-Regular.woff2` (~134 КБ) и `public/fonts/InterDisplay-Bold.woff2` (~139 КБ).
+- Подключение в `src/styles/global.css` — два `@font-face` под одной family `"Inter Display"`, с разными `font-weight` (400 и 700) и `font-display: swap`.
+- Preload в `src/layouts/BaseLayout.astro` только для Regular (Bold подгрузится при первой нужде):
   ```html
-  <link rel="preload" href="/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/InterDisplay-Regular.woff2" as="font" type="font/woff2" crossorigin />
   ```
-- В CSS используется `font-family: "Inter", Arial, sans-serif`. **НЕ писать `"Inter Display"`** — variable file сам выбирает оптику через `opsz` axis в зависимости от размера. Активируется глобально `font-optical-sizing: auto` в body.
+- В CSS используется `font-family: "Inter Display", Arial, sans-serif`. Это совпадает с тем что использует Figma в макете.
+- **Без variable / opsz axis** — мы используем статические файлы Inter Display (а не InterVariable.woff2 с опс-осью). Причина: в Inter 4.x InterVariable содержит и Text, и Display через `opsz`, но это давало менее предсказуемый результат — иногда браузер не переключал на Display правильно. Статический Inter Display Regular гарантирует тот же визуальный рендер что и Figma.
 - Font smoothing: `-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility;` — обязательно, иначе в Safari шрифты будут «мыльными» из-за subpixel anti-aliasing по умолчанию.
-- **Историческая ошибка (исправлена 2026-05-14, commit 973e4a6):** до этого шрифт вообще не подгружался — был только `font-family: "Inter Display"` без `@font-face` и без `<link>`. Браузеры пользователей фолбэчили на Arial. На Mac Романа Inter Display подхватывался системно — поэтому проблема не была видна локально. Теперь self-hosted.
+- **Историческая ошибка (исправлена 2026-05-14):** до этого шрифт вообще не подгружался — был только `font-family: "Inter Display"` без `@font-face` и без `<link>`. Браузеры пользователей фолбэчили на Arial. На Mac Романа Inter Display подхватывался системно — поэтому проблема не была видна локально. Сейчас self-hosted (commit `0c1a6b9`).
+
+## Letter-spacing (tracking)
+
+В Figma у Романа разные tracking'и для разных ролей текста — это типографическое решение, в Inter Display нет встроенной optical-size коррекции, поэтому tracking задаётся вручную. Используем `em` (не px), чтобы внутри одной роли tracking масштабировался вместе с кеглем по clamp.
+
+| Роль | Селектор | letter-spacing | Значение в Figma |
+|---|---|---|---|
+| Lead (h1) | `.hero-text h1` | `-0.01em` (-1%) | -0.59px при 59px |
+| Section heading (h2 типа «Задизайнил», «Контекст») | `.project-kicker`, `.text-section h2`, `.side-work__text h2` | `-0.03em` (-3%) | -1.26px при 42px |
+| Body / Description | `.project-sidebar p`, `.text-section p`, `.side-work__text p` | `0` | 0 |
+| UI (хедер, футер, нав) | `.site-header`, `.site-footer` | `0` | 0 |
+| Project number (01, 02…) | `.project-number` | `0` (не сверено с Figma — TODO если хочется идеально) | TBD |
+
+Правило для будущего: **tracking задавать в `em`, не `px`** — иначе на разных кеглях через clamp будет ломаться пропорция. Между ролями значения разные — это сознательное дизайнерское решение, не баг.
 
 ## Гарантии и ограничения тестирования
 
