@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/InterVariable.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --color-page: #ffffff;
   --color-text: #000000;
@@ -18,8 +26,8 @@
   --space-block:         clamp(30px, calc(2.083vw + 10px), 40px);
   --space-section:       clamp(58px, calc(3.542vw + 24px), 75px);
   --space-section-large: clamp(85px, calc(6.25vw + 25px), 115px);
-  --font-display: "Inter Display", Inter, Arial, sans-serif;
-  --font-text: "Inter Display", Inter, Arial, sans-serif;
+  --font-display: "Inter", Arial, sans-serif;
+  --font-text: "Inter", Arial, sans-serif;
   --case-radius: 12px;
 }
 
@@ -32,13 +40,16 @@ html {
   color: var(--color-text);
   font-family: var(--font-display);
   font-size: 16px;
-  text-rendering: geometricPrecision;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   background: var(--color-page);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
 }
 
 img {
