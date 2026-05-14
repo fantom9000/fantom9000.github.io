@@ -83,7 +83,7 @@ export const projects: Project[] = [
       },
       {
         type: "browser",
-        image: "/images/projects/burosfera/main-screen.png",
+        image: "/images/projects/burosfera/figma-sections/main-screen.webp",
         alt: "Главный экран платформы Бюросфера",
         height: 954
       },
@@ -96,8 +96,8 @@ export const projects: Project[] = [
       {
         type: "imagePair",
         images: [
-          "/images/projects/burosfera/figma-sections/mobile-list.png",
-          "/images/projects/burosfera/figma-sections/mobile-card.png"
+          "/images/projects/burosfera/figma-sections/mobile-list.webp",
+          "/images/projects/burosfera/figma-sections/mobile-card.webp"
         ],
         alts: ["Мобильный экран списка специалистов Бюросферы", "Мобильный экран карточки специалиста Бюросферы"]
       },
@@ -109,7 +109,7 @@ export const projects: Project[] = [
       },
       {
         type: "browser",
-        image: "/images/projects/burosfera/figma-sections/publish-overview.png",
+        image: "/images/projects/burosfera/figma-sections/publish-overview.webp",
         alt: "Экран с условиями публикации вакансий в Бюросфере",
         height: 817
       },
@@ -121,7 +121,7 @@ export const projects: Project[] = [
       },
       {
         type: "browser",
-        image: "/images/projects/burosfera/figma-sections/vacancy-form.png",
+        image: "/images/projects/burosfera/figma-sections/vacancy-form.webp",
         alt: "Форма создания новой вакансии в Бюросфере",
         height: 1234
       },
@@ -133,7 +133,7 @@ export const projects: Project[] = [
       },
       {
         type: "browser",
-        image: "/images/projects/burosfera/figma-sections/payment-summary.png",
+        image: "/images/projects/burosfera/figma-sections/payment-summary.webp",
         alt: "Экран выбора условий оплаты публикации вакансии",
         height: 821
       },
@@ -145,7 +145,7 @@ export const projects: Project[] = [
       },
       {
         type: "browser",
-        image: "/images/projects/burosfera/figma-sections/payment-modal.png",
+        image: "/images/projects/burosfera/figma-sections/payment-modal.webp",
         alt: "Модальное окно оплаты подписки Бюросферы",
         height: 1310
       },
@@ -157,9 +157,9 @@ export const projects: Project[] = [
       },
       {
         type: "desktopMobile",
-        desktopImage: "/images/projects/burosfera/figma-sections/success-desktop.png",
+        desktopImage: "/images/projects/burosfera/figma-sections/success-desktop.webp",
         desktopAlt: "Десктопный экран успешной публикации вакансии",
-        mobileImage: "/images/projects/burosfera/figma-sections/success-mobile.png",
+        mobileImage: "/images/projects/burosfera/figma-sections/success-mobile.webp",
         mobileAlt: "Мобильный экран успешной публикации вакансии"
       }
     ]
