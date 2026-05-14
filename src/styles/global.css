@@ -960,7 +960,8 @@ h3 {
   }
 
   .project-sidebar p,
-  .side-work__text p {
+  .side-work__text p,
+  .text-section p {
     max-width: none;
   }
 }
