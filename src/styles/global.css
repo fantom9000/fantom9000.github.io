@@ -34,6 +34,8 @@
   --space-block:         clamp(30px, calc(2.083vw + 10px), 40px);
   --space-section:       clamp(58px, calc(3.542vw + 24px), 75px);
   --space-section-large: clamp(85px, calc(6.25vw + 25px), 115px);
+  --space-case-text-bottom: clamp(24px, calc(0.83vw + 20px), 32px);
+  --space-case-block:       clamp(50px, calc(3.125vw + 35px), 80px);
   --font-display: "Inter Display", Arial, sans-serif;
   --font-text: "Inter Display", Arial, sans-serif;
   --case-radius: 12px;
@@ -368,7 +370,7 @@ h3 {
   margin: 0 auto;
   grid-template-columns: calc(var(--sidebar) - 20px) 62.43%;
   gap: 20px;
-  padding: 0 var(--pad) var(--space-block);
+  padding: 0 var(--pad) var(--space-case-text-bottom);
 }
 
 .text-section h2 {
@@ -385,9 +387,9 @@ h3 {
   display: flex;
   width: 100%;
   max-width: 1440px;
-  height: calc(var(--frame-height) + 80px);
+  height: calc(var(--frame-height) + var(--space-case-block));
   margin: 0 auto;
-  padding: 0 var(--pad) 80px;
+  padding: 0 var(--pad) var(--space-case-block);
   flex-direction: column;
   align-items: flex-end;
 }
@@ -431,7 +433,7 @@ h3 {
   margin: 0 auto;
   justify-content: flex-end;
   gap: 20px;
-  padding: 0 var(--pad) 80px;
+  padding: 0 var(--pad) var(--space-case-block);
 }
 
 .mobile-screen {
@@ -462,7 +464,7 @@ h3 {
   margin: 0 auto;
   justify-content: flex-end;
   gap: 20px;
-  padding: 0 var(--pad) 80px;
+  padding: 0 var(--pad) var(--space-case-block);
 }
 
 .case-image-tile,
@@ -788,7 +790,6 @@ h3 {
 
   .text-section {
     row-gap: 0;
-    padding-bottom: 16px;
   }
 
   .text-section h2 {
