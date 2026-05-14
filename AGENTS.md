@@ -22,7 +22,7 @@ Use **claude-sonnet-4-6** for this project. Do not ask Roman for permission befo
 - Git is initialized in this folder.
 - GitHub remote is connected: `https://github.com/fantom9000/roman-portfolio`.
 - Current branch is `main`; all work is merged here. **Always work from `main` — do not continue old worktree branches.**
-- Latest known commit (на момент этой записи): `30676ce Case spacing: introduce --space-case-text-bottom and --space-case-block tokens`. Реальный последний — `git log --oneline -5`.
+- Latest known commit (на момент этой записи): `4909dc8 Replace 3D tiles + concept-city with x2 WebP (Figma JPG -> Pillow q=85)`. Реальный последний — `git log --oneline -5`.
 - **Сессия 2026-05-14 (Opus 4.7):** большая переборка типографики и инфраструктуры шрифтов. Закрыты пункты 3, 6, 7. Введены: правильное self-host Inter Display (Regular + Bold), font-smoothing, letter-spacing system, ui = body, мобильный хедер (контакты в строку), 3-tier градация ширин описаний, case-spacing tokens, неразрывный дефис в «AI‑инструменты». Полный список инсайтов — в разделе «Поучительные истории сессии 2026-05-14».
 - **Russian typography**: `scripts/typograf.mjs` обрабатывает все `.ts` и `.astro` файлы в `src/` через npm-пакет `typograf`. Вставляет настоящие Unicode-неразрывные пробелы (U+00A0), длинные тире, кавычки-ёлочки и т.д. — **не HTML-сущности** (никаких `&nbsp;` в исходниках). Обрабатывает: строки в кавычках (атрибуты, data поля) + текст между тегами `<p>`, `<h1>-<h6>`, `<li>`. Запускать вручную через `node scripts/typograf.mjs`. DevTools Chrome визуально показывает невидимые U+00A0 как `&nbsp;` — это features DevTools, не реальный контент HTML.
 - **Concepts section ≤1000px:** right column (tripadvisor + city) hidden, a separate `.concepts-mobile-row` appears under the bento. Uses CSS Grid `grid-template-columns: 256fr 395fr` so both tiles have matching height with their natural aspect ratios preserved (city `362/395` portrait, tripadvisor `362/256` landscape). At ≤768px, `grid-column` is reset to `1` to match `.side-work`'s single-column layout. HTML duplicates the two tiles (one set in `.concepts-right` for desktop, one in `.concepts-mobile-row` for mobile) — CSS toggles visibility.
@@ -208,6 +208,10 @@ Previously: `case-image-tile`, `mobile-screen`, and `desktop-mobile-screens` use
 - **Cargo.site (платформа Repponen и многих других editorial-портфолио) — закрытая.** Использует custom elements (`<column-set>`, `<column-unit>`, `<media-item>`, `<bodycopy>`) и свой DSL. Многие «фишки» (scroll fade-in, optical курсор, фиксированные хедеры) — features платформы, не воспроизводимы один-в-один. Воспроизводить нужно только **принципы** (двухстрочная навигация, подписи Fig N, цвет #141414 вместо чёрного, минимум hover-состояний).
 - **Прежде чем городить решение — сходить в Figma и посмотреть исходные параметры.** Так выяснили что в Figma везде `Inter Display Regular`, на лиде `letter-spacing: -0.59px`, на section `-1.26px`. Без этой проверки полагался бы на «общий вкус» — ошибся бы.
 - **Прогрессивный tracking через `em` работает автоматически.** Внутри одной роли (например section с clamp 28-42px) tracking меняется пропорционально без дополнительного кода. Между ролями — разные проценты, это сознательное решение.
+- **×3 экспорт картинок из Figma — избыточен для веба.** Слот макета 1086px на десктопе → ×2 (2172px) хватает для всех retina-MacBook и retina-iPhone. ×3 нужен только для iPhone Pro/Pro Max (~5% устройств), остальные качают +50% веса впустую. Правило: экспорт ×2 от **реального** слотового размера.
+- **Pillow lossless WebP на фотореалистичных текстурах (3D-сцены, шум, градиенты) даёт 5+ MB на файл — не использовать.** Lossless подходит только для UI/icons/flat illustrations. Для фоторе-листичных картинок: Figma JPG ×2 → Pillow WebP `quality=85, method=6`. Результат: ~10× сжатие vs lossless, визуально неотличимо. На 7 3D-тайлах: 10 MB lossless → 810 KB lossy.
+- **Photoshop WebP — есть только в Export As (с версии 23.2, Feb 2022), не в Save for Web Legacy.** Save for Web до сих пор только JPEG/PNG/GIF. В новом Export As WebP появляется в Format dropdown — но в некоторых билдах Photoshop отсутствует (баг или урезанный SKU). В таких случаях проще: экспорт JPG из Figma → Pillow → WebP, чем разбираться с Photoshop.
+- **Двойная компрессия JPG → WebP даёт ≤5% потери, визуально неразличимо.** Боялся что JPG q=85 + WebP q=85 даст visible degradation — на практике нет: JPEG и WebP используют похожие частотные преобразования, поэтому второй проход вычищает только то что уже было сжато. Для фотореалистичного контента это надёжный путь.
 
 ## Гарантии и ограничения тестирования
 
@@ -329,7 +333,27 @@ The layout is built on two vertical power lines (силовые линии):
   - `public/images/projects/peptidy/figma-sections`
 - Peptid.ru desktop at 1440 is structurally approved for now. Its image quality still needs a later source/optimization pass, and responsive issues should be handled with the other pages in a shared responsive pass.
 - `public/images/figma/optimized/` and `public/images/figma/exact/` have been deleted — do not reference them.
-- Future improvement: generate high-quality WebP/AVIF variants from approved PNG/source assets when the dependency environment is stable.
+
+## Pipeline для оптимизации картинок (установлен 2026-05-14)
+
+Стандартный поток для любых новых картинок на сайте:
+
+1. **Экспорт из Figma** — формат **JPG**, scale **×2** от слотового размера (не ×3).
+   - Слот в макете 1086px → экспорт 2172px (для wide-тайлов)
+   - Слот в макете 533px → экспорт 1066px (для regular-тайлов)
+   - **×3 избыточен** — только iPhone Pro имеет @3x, большинство экранов @2x. ×3 даёт +50% веса при невидимой разнице.
+2. **Конвертация в WebP** — Pillow, `quality=85, method=6`. Удалить .jpg исходник.
+   - Пример скрипта: см. `scripts/jpg_to_webp.py` (если будет создан) или inline python.
+3. **Имена файлов и пути не меняются** — WebP кладётся поверх существующего .webp с тем же именем.
+
+**Цифры:** на 7 3D-тайлах ×2 WebP q=85 = ~810 KB суммарно. Lossless WebP давал >10 MB (12× больше). Визуально неотличимо.
+
+**Что НЕ работает:**
+- **Photoshop Save for Web (Legacy) НЕ умеет WebP** — только JPEG/PNG/GIF.
+- **Photoshop Export As умеет WebP с версии 23.2 (Feb 2022)** — но не всегда виден (зависит от билда).
+- **Pillow lossless WebP** на фотореалистичных текстурах (3D-сцены, шум, градиенты) даёт файлы 5+ MB — не использовать. Lossless подходит только для UI/icons/flat illustrations.
+
+**Зачем JPG-промежуток, а не PNG?** PNG не теряет качества, но и не сжимает фотореалистичный контент. JPG q=85 из Figma уже достаточно сжат (~1-3 MB), и Pillow → WebP q=85 даёт ещё −90%. Двойная компрессия теряет ≤5%, визуально неразличимо.
 
 ## Code Organization
 
