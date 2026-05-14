@@ -809,10 +809,7 @@ h3 {
   }
 
   .project-sidebar p,
-  .project-sidebar h2 {
-    max-width: 70%;
-  }
-
+  .project-sidebar h2,
   .side-work__text p {
     max-width: 70%;
   }
@@ -960,5 +957,10 @@ h3 {
 @media (max-width: 480px) {
   .hero-text h1 {
     font-size: clamp(28px, calc(5vw + 12px), 36px);
+  }
+
+  .project-sidebar p,
+  .side-work__text p {
+    max-width: none;
   }
 }
