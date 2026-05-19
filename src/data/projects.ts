@@ -323,7 +323,7 @@ export const projects: Project[] = [
       },
       {
         type: "browser",
-        image: "/images/projects/peptidy/main-screen.png",
+        image: "/images/projects/peptidy/figma-sections/main-screen.webp",
         alt: "Лендинг программы лояльности Peptid.ru",
         height: 2532
       },
@@ -336,8 +336,8 @@ export const projects: Project[] = [
       {
         type: "imagePair",
         images: [
-          "/images/projects/peptidy/figma-sections/task-mobile-1.png",
-          "/images/projects/peptidy/figma-sections/task-mobile-2.png"
+          "/images/projects/peptidy/figma-sections/task-mobile-1.webp",
+          "/images/projects/peptidy/figma-sections/task-mobile-2.webp"
         ],
         alts: [
           "Мобильный экран лендинга Peptid.ru с началом программы лояльности",
@@ -352,7 +352,7 @@ export const projects: Project[] = [
       },
       {
         type: "wideImage",
-        image: "/images/projects/peptidy/figma-sections/registration-flow.png",
+        image: "/images/projects/peptidy/figma-sections/registration-flow.webp",
         alt: "Мобильные экраны финальных шагов регистрации Peptid.ru"
       }
     ]
