@@ -185,8 +185,8 @@ export const projects: Project[] = [
         body:
           "Квиз использовался как рекламный сценарий: пользователь проходит серию вопросов, получает результат и переходит к подборке игр. Основная задача — удержать внимание и довести пользователя до установки.",
         images: [
-          "/images/projects/quiz/figma-sections/context-start-dark.png",
-          "/images/projects/quiz/figma-sections/context-start-light.png"
+          "/images/projects/quiz/figma-sections/context-start-dark.webp",
+          "/images/projects/quiz/figma-sections/context-start-light.webp"
         ],
         alts: ["Тёмный стартовый экран квиза SayGames", "Светлый стартовый экран квиза SayGames"]
       },
@@ -195,7 +195,7 @@ export const projects: Project[] = [
         title: "Задача",
         body:
           "Спроектировать сценарий и интерфейс квиза, чтобы пользователь проходил его до конца и переходил к скачиванию игр.",
-        image: "/images/projects/quiz/figma-sections/task-flow.png",
+        image: "/images/projects/quiz/figma-sections/task-flow.webp",
         alt: "Экраны выбора пола, вопроса да или нет и выбора игры в квизе SayGames"
       },
       {
@@ -204,8 +204,8 @@ export const projects: Project[] = [
         body:
           "Собрал линейный сценарий с короткими вопросами и быстрым выбором, чтобы пользователь не терялся и не выпадал из прохождения. Визуальный стиль и темп экранов поддерживают интерес на протяжении всего квиза.",
         images: [
-          "/images/projects/quiz/figma-sections/solution-character.png",
-          "/images/projects/quiz/figma-sections/solution-game.png"
+          "/images/projects/quiz/figma-sections/solution-character.webp",
+          "/images/projects/quiz/figma-sections/solution-game.webp"
         ],
         alts: ["Экран выбора характеристик в квизе SayGames", "Экран оценки игры в квизе SayGames"]
       },
@@ -214,7 +214,7 @@ export const projects: Project[] = [
         title: "",
         body:
           "В конце квиз определяет тип игрока и формирует подборку игр, позволяя пользователю сразу перейти к их установке.",
-        image: "/images/projects/quiz/figma-sections/result-flow.png",
+        image: "/images/projects/quiz/figma-sections/result-flow.webp",
         alt: "Экраны подбора игры, анализа и результата квиза SayGames"
       }
     ]
