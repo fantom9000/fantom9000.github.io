@@ -241,7 +241,7 @@ export const projects: Project[] = [
       },
       {
         type: "browser",
-        image: "/images/projects/mary-trufel/figma-sections/context-empty.png",
+        image: "/images/projects/mary-trufel/figma-sections/context-empty.webp",
         alt: "Страница избранного Mary Trufel",
         height: 1362
       },
@@ -253,9 +253,9 @@ export const projects: Project[] = [
       },
       {
         type: "desktopMobile",
-        desktopImage: "/images/projects/mary-trufel/figma-sections/task-desktop.png",
+        desktopImage: "/images/projects/mary-trufel/figma-sections/task-desktop.webp",
         desktopAlt: "Страница избранного Mary Trufel с сохраненными платьями",
-        mobileImage: "/images/projects/mary-trufel/figma-sections/task-mobile.png",
+        mobileImage: "/images/projects/mary-trufel/figma-sections/task-mobile.webp",
         mobileAlt: "Мобильная страница избранного Mary Trufel",
         desktopHeight: 964,
         mobileHeight: 481
@@ -268,7 +268,7 @@ export const projects: Project[] = [
       },
       {
         type: "browser",
-        image: "/images/projects/mary-trufel/figma-sections/recommendation-desktop.png",
+        image: "/images/projects/mary-trufel/figma-sections/recommendation-desktop.webp",
         alt: "Экран Mary Trufel с персональной подборкой платьев",
         height: 1287
       },
@@ -280,9 +280,9 @@ export const projects: Project[] = [
       },
       {
         type: "desktopMobile",
-        desktopImage: "/images/projects/mary-trufel/figma-sections/fairy-desktop.png",
+        desktopImage: "/images/projects/mary-trufel/figma-sections/fairy-desktop.webp",
         desktopAlt: "Страница избранного Mary Trufel со вставкой подбора от Феи",
-        mobileImage: "/images/projects/mary-trufel/figma-sections/fairy-mobile.png",
+        mobileImage: "/images/projects/mary-trufel/figma-sections/fairy-mobile.webp",
         mobileAlt: "Мобильная страница избранного Mary Trufel со вставкой подбора от Феи",
         desktopHeight: 954,
         mobileHeight: 481
@@ -290,8 +290,8 @@ export const projects: Project[] = [
       {
         type: "imagePair",
         images: [
-          "/images/projects/mary-trufel/figma-sections/mobile-tile-1.png",
-          "/images/projects/mary-trufel/figma-sections/mobile-tile-2.png"
+          "/images/projects/mary-trufel/figma-sections/mobile-tile-1.webp",
+          "/images/projects/mary-trufel/figma-sections/mobile-tile-2.webp"
         ],
         alts: [
           "Мобильный экран персональной подборки Mary Trufel",
