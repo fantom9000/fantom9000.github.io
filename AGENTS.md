@@ -9,6 +9,7 @@ Use **claude-sonnet-4-6** for this project. Do not ask Roman for permission befo
 ## Current State
 
 - First implementation pass is complete.
+- **CV/resume work in Figma is documented in `docs/cv-handoff.md`.** Before touching the Figma resume page (`Резюме`, node `484:1197`), read that file. It records current frame IDs, CV styles/variables, approved links/text decisions, tool limitations around Inter Display, and rollback rules. Work on the CV in small atomic steps with visual screenshot checks.
 - Home page has gone through several visual-polish passes with Roman's feedback. It is not final pixel-perfect, but the current direction must be preserved unless Roman explicitly asks to revert it.
 - The project is an Astro static site with 5 routes:
   - `/`

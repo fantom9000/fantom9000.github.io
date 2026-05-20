@@ -10,4 +10,5 @@ node_modules
 .claude/*
 !.claude/skills/
 CLAUDE.md
-docs/
+docs/*
+!docs/cv-handoff.md
