@@ -3,7 +3,7 @@ import { site } from "@data/site";
 ---
 
 <footer class="site-footer text-20">
-  <span class="site-name">{site.name}</span>
+  <a class="site-name" href="/" aria-label="На главную">{site.name}</a>
   <span class="site-role">{site.title}</span>
   <nav class="contact-links" aria-label="Контакты в футере">
     <a href={site.contacts.cv}>CV</a>

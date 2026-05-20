@@ -131,13 +131,21 @@ h3 {
   align-items: center;
 }
 
-.site-header a:hover,
-.site-footer a:hover,
 .contact-links a:hover,
-.project-sidebar:hover h2 {
+.project-preview:has(a:hover) h2 {
   text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.14em;
+  text-decoration-thickness: 0.5px;
+  text-decoration-skip-ink: none;
+  text-underline-offset: 0.22em;
+}
+
+.site-name {
+  width: fit-content;
+  transition: opacity 0.2s ease;
+}
+
+.site-name:hover {
+  opacity: 0.6;
 }
 
 .hero-text {

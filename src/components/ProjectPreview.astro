@@ -10,15 +10,15 @@ const { project } = Astro.props;
 
 <article class="project-preview" data-project={project.slug}>
   {project.number === "01" && <span class="project-kicker">Задизайнил</span>}
-  <a class="project-sidebar" href={project.href} aria-label={`Открыть проект ${project.title}`}>
+  <div class="project-sidebar">
     <div class="project-sidebar__meta">
       <span class="project-number">{project.number}</span>
       <div class="project-sidebar__text">
-        <h2>{project.title}</h2>
+        <h2><a href={project.href}>{project.title}</a></h2>
         <p>{project.description}</p>
       </div>
     </div>
-  </a>
+  </div>
   <a class="project-visual" href={project.href} aria-label={`Открыть проект ${project.title}`}>
     {
       project.previewKind === "quiz" ? (
