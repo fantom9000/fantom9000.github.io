@@ -10,6 +10,8 @@ export type CaseSection =
       body?: string;
       image: string;
       alt: string;
+      width: number;
+      height: number;
     }
   | {
       type: "imagePair";
@@ -24,6 +26,8 @@ export type CaseSection =
       body?: string;
       image: string;
       alt: string;
+      width: number;
+      height: number;
     }
   | {
       type: "desktopMobile";
@@ -31,6 +35,8 @@ export type CaseSection =
       body?: string;
       desktopImage: string;
       desktopAlt: string;
+      desktopWidth: number;
+      desktopHeight: number;
       mobileImage: string;
       mobileAlt: string;
     };
@@ -72,7 +78,9 @@ export const projects: Project[] = [
       {
         type: "browser",
         image: "/images/projects/burosfera/figma-sections/main-screen.webp",
-        alt: "Главный экран платформы Бюросфера"
+        alt: "Главный экран платформы Бюросфера",
+        width: 2172,
+        height: 1908
       },
       {
         type: "text",
@@ -98,6 +106,8 @@ export const projects: Project[] = [
         type: "browser",
         image: "/images/projects/burosfera/figma-sections/publish-overview.webp",
         alt: "Экран с условиями публикации вакансий в Бюросфере",
+        width: 2172,
+        height: 1634,
       },
       {
         type: "text",
@@ -109,6 +119,8 @@ export const projects: Project[] = [
         type: "browser",
         image: "/images/projects/burosfera/figma-sections/vacancy-form.webp",
         alt: "Форма создания новой вакансии в Бюросфере",
+        width: 2172,
+        height: 2468,
       },
       {
         type: "text",
@@ -119,7 +131,9 @@ export const projects: Project[] = [
       {
         type: "browser",
         image: "/images/projects/burosfera/figma-sections/payment-summary.webp",
-        alt: "Экран выбора условий оплаты публикации вакансии"
+        alt: "Экран выбора условий оплаты публикации вакансии",
+        width: 2172,
+        height: 1642
       },
       {
         type: "text",
@@ -129,7 +143,9 @@ export const projects: Project[] = [
       {
         type: "browser",
         image: "/images/projects/burosfera/figma-sections/payment-modal.webp",
-        alt: "Модальное окно оплаты подписки Бюросферы"
+        alt: "Модальное окно оплаты подписки Бюросферы",
+        width: 2172,
+        height: 2620
       },
       {
         type: "text",
@@ -140,6 +156,8 @@ export const projects: Project[] = [
         type: "desktopMobile",
         desktopImage: "/images/projects/burosfera/figma-sections/success-desktop.webp",
         desktopAlt: "Десктопный экран успешной публикации вакансии",
+        desktopWidth: 1688,
+        desktopHeight: 1136,
         mobileImage: "/images/projects/burosfera/figma-sections/success-mobile.webp",
         mobileAlt: "Мобильный экран успешной публикации вакансии"
       }
@@ -176,7 +194,9 @@ export const projects: Project[] = [
         body:
           "Спроектировать сценарий и интерфейс квиза, чтобы пользователь проходил его до конца и переходил к скачиванию игр.",
         image: "/images/projects/quiz/figma-sections/task-flow.webp",
-        alt: "Экраны выбора пола, вопроса да или нет и выбора игры в квизе SayGames"
+        alt: "Экраны выбора пола, вопроса да или нет и выбора игры в квизе SayGames",
+        width: 2172,
+        height: 1448
       },
       {
         type: "imagePair",
@@ -194,7 +214,9 @@ export const projects: Project[] = [
         body:
           "В конце квиз определяет тип игрока и формирует подборку игр, позволяя пользователю сразу перейти к их установке.",
         image: "/images/projects/quiz/figma-sections/result-flow.webp",
-        alt: "Экраны подбора игры, анализа и результата квиза SayGames"
+        alt: "Экраны подбора игры, анализа и результата квиза SayGames",
+        width: 2172,
+        height: 1448
       }
     ]
   },
@@ -220,7 +242,9 @@ export const projects: Project[] = [
       {
         type: "browser",
         image: "/images/projects/mary-trufel/figma-sections/context-empty.webp",
-        alt: "Страница избранного Mary Trufel"
+        alt: "Страница избранного Mary Trufel",
+        width: 2172,
+        height: 2724
       },
       {
         type: "text",
@@ -232,6 +256,8 @@ export const projects: Project[] = [
         type: "desktopMobile",
         desktopImage: "/images/projects/mary-trufel/figma-sections/task-desktop.webp",
         desktopAlt: "Страница избранного Mary Trufel с сохраненными платьями",
+        desktopWidth: 1688,
+        desktopHeight: 1928,
         mobileImage: "/images/projects/mary-trufel/figma-sections/task-mobile.webp",
         mobileAlt: "Мобильная страница избранного Mary Trufel"
       },
@@ -244,6 +270,8 @@ export const projects: Project[] = [
         type: "browser",
         image: "/images/projects/mary-trufel/figma-sections/recommendation-desktop.webp",
         alt: "Экран Mary Trufel с персональной подборкой платьев",
+        width: 2172,
+        height: 2574,
       },
       {
         type: "text",
@@ -254,6 +282,8 @@ export const projects: Project[] = [
         type: "desktopMobile",
         desktopImage: "/images/projects/mary-trufel/figma-sections/fairy-desktop.webp",
         desktopAlt: "Страница избранного Mary Trufel со вставкой подбора от Феи",
+        desktopWidth: 1688,
+        desktopHeight: 1908,
         mobileImage: "/images/projects/mary-trufel/figma-sections/fairy-mobile.webp",
         mobileAlt: "Мобильная страница избранного Mary Trufel со вставкой подбора от Феи",
       },
@@ -293,7 +323,9 @@ export const projects: Project[] = [
       {
         type: "browser",
         image: "/images/projects/peptidy/figma-sections/main-screen.webp",
-        alt: "Лендинг программы лояльности Peptid.ru"
+        alt: "Лендинг программы лояльности Peptid.ru",
+        width: 2172,
+        height: 5064
       },
       {
         type: "text",
@@ -320,7 +352,9 @@ export const projects: Project[] = [
       {
         type: "wideImage",
         image: "/images/projects/peptidy/figma-sections/registration-flow.webp",
-        alt: "Мобильные экраны финальных шагов регистрации Peptid.ru"
+        alt: "Мобильные экраны финальных шагов регистрации Peptid.ru",
+        width: 2172,
+        height: 1448
       }
     ]
   }

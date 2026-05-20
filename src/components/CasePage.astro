@@ -31,7 +31,7 @@ const { project } = Astro.props;
           return (
             <>
               {section.body && <TextSection title={section.title} body={section.body} />}
-              <BrowserFrame image={section.image} alt={section.alt} />
+              <BrowserFrame image={section.image} alt={section.alt} width={section.width} height={section.height} />
             </>
           );
         }
@@ -48,7 +48,7 @@ const { project } = Astro.props;
             <>
               {section.body && <TextSection title={section.title} body={section.body} />}
               <figure class="case-wide-image">
-                <img src={section.image} alt={section.alt} loading="lazy" />
+                <img src={section.image} alt={section.alt} width={section.width} height={section.height} loading="lazy" />
               </figure>
             </>
           );
@@ -59,6 +59,8 @@ const { project } = Astro.props;
             <DesktopMobileScreens
               desktopImage={section.desktopImage}
               desktopAlt={section.desktopAlt}
+              desktopWidth={section.desktopWidth}
+              desktopHeight={section.desktopHeight}
               mobileImage={section.mobileImage}
               mobileAlt={section.mobileAlt}
             />

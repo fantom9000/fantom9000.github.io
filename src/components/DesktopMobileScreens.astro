@@ -2,20 +2,22 @@
 type Props = {
   desktopImage: string;
   desktopAlt: string;
+  desktopWidth: number;
+  desktopHeight: number;
   mobileImage: string;
   mobileAlt: string;
 };
 
-const { desktopImage, desktopAlt, mobileImage, mobileAlt } = Astro.props;
+const { desktopImage, desktopAlt, desktopWidth, desktopHeight, mobileImage, mobileAlt } = Astro.props;
 ---
 
 <section class="desktop-mobile-screens">
   <figure class="desktop-mobile-browser">
     <div class="desktop-mobile-image">
-      <img src={desktopImage} alt={desktopAlt} width="844" height="568" loading="lazy" />
+      <img src={desktopImage} alt={desktopAlt} width={desktopWidth} height={desktopHeight} loading="lazy" />
     </div>
   </figure>
   <figure class="desktop-mobile-phone">
-    <img src={mobileImage} alt={mobileAlt} width="222" height="481" loading="lazy" />
+    <img src={mobileImage} alt={mobileAlt} width="444" height="962" loading="lazy" />
   </figure>
 </section>

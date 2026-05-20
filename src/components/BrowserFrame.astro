@@ -2,13 +2,15 @@
 type Props = {
   image: string;
   alt: string;
+  width: number;
+  height: number;
 };
 
-const { image, alt } = Astro.props;
+const { image, alt, width, height } = Astro.props;
 ---
 
 <figure class="browser-frame">
   <div class="browser-image">
-    <img src={image} alt={alt} width="1086" loading="lazy" />
+    <img src={image} alt={alt} width={width} height={height} loading="lazy" />
   </div>
 </figure>
