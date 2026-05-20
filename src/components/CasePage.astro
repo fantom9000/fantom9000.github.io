@@ -6,7 +6,6 @@ import Divider from "@components/Divider.astro";
 import HeroText from "@components/HeroText.astro";
 import TextSection from "@components/TextSection.astro";
 import BrowserFrame from "@components/BrowserFrame.astro";
-import MobileScreens from "@components/MobileScreens.astro";
 import ImagePair from "@components/ImagePair.astro";
 import DesktopMobileScreens from "@components/DesktopMobileScreens.astro";
 import type { Project } from "@data/projects";
@@ -33,14 +32,6 @@ const { project } = Astro.props;
             <>
               {section.body && <TextSection title={section.title} body={section.body} />}
               <BrowserFrame image={section.image} alt={section.alt} />
-            </>
-          );
-        }
-        if (section.type === "mobilePair") {
-          return (
-            <>
-              {section.body && <TextSection title={section.title} body={section.body} />}
-              <MobileScreens images={section.images} alts={section.alts} />
             </>
           );
         }

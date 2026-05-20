@@ -12,13 +12,6 @@ export type CaseSection =
       alt: string;
     }
   | {
-      type: "mobilePair";
-      title?: string;
-      body?: string;
-      images: string[];
-      alts: string[];
-    }
-  | {
       type: "imagePair";
       title?: string;
       body?: string;
