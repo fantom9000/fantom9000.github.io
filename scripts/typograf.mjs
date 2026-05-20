@@ -22,7 +22,7 @@ function processFile(path) {
   // Only matches if content is plain text (no nested tags or JS expressions)
   processed = processed.replace(
     /(<(p|h[1-6]|li)(?:\s[^>]*)?>)([^<{}]*)(<\/\2>)/g,
-    (match, openTag, tag, content, closeTag) => {
+    (match, openTag, _tag, content, closeTag) => {
       if (!/[А-Яа-яЁё]/.test(content)) return match;
       const result = tp.execute(content);
       if (result !== content) count++;
