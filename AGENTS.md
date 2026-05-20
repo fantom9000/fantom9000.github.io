@@ -449,6 +449,7 @@ Roman is a designer learning the tooling. He cannot easily read code or recover 
 8. **Model:** for this project Roman uses **opus-4-7 high** by default — design work involves many spatial/proportional calculations where opus is noticeably more reliable. Sonnet may be appropriate for plain text edits or asset shuffles but should not be the default for layout work.
 9. **Cap-height alignment:** to align a large number's caps with a smaller heading's caps in a flex row, use `align-items: flex-start` on the flex container and `margin-top: -0.08em` (approximately) on the number with `line-height: 1`. The negative margin compensates for the natural ascender-to-cap-top offset of Inter Display at the larger size. Value can be fine-tuned ±0.02em visually.
 10. **Duplicate media-query rules:** when working inside a long media-query block, grep for the property/selector you're adding before adding it — there may already be a rule lower in the block overriding yours. This caused at least two visible bugs in one session.
+11. **Safety-and-consequences check before every edit.** Before proposing any change, state explicitly: (а) что меняется, (б) что может сломаться (включая мёртвые ветки, типы, кросс-файловые ссылки, регрессии на других страницах), (в) почему это безопасно. Если на любой из трёх вопросов нет уверенного ответа — остановиться и спросить Романа, а не угадывать. Применяется к каждой правке, не только к крупным.
 
 ## Editing Guidance
 
