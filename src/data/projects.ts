@@ -45,7 +45,6 @@ export type Project = {
   slug: "burosfera" | "quiz" | "mary-trufel" | "peptidy";
   number: string;
   title: string;
-  shortTitle: string;
   description: string;
   href: string;
   previewImage?: string;
@@ -59,7 +58,6 @@ export const projects: Project[] = [
     slug: "burosfera",
     number: "01",
     title: "Биржа Бюро Горбунова",
-    shortTitle: "Бюросфера",
     description:
       "Профессиональное сообщество и биржа дизайнеров, редакторов, руководителей и всех причастных к созданию продуктов.",
     href: "/projects/burosfera/",
@@ -167,7 +165,6 @@ export const projects: Project[] = [
     slug: "quiz",
     number: "02",
     title: "Квиз SayGames",
-    shortTitle: "SayGames",
     description:
       "Мобильный квиз для подбора игр на основе стиля и предпочтений пользователя.",
     href: "/projects/quiz/",
@@ -224,7 +221,6 @@ export const projects: Project[] = [
     slug: "mary-trufel",
     number: "03",
     title: "Mary Trufel",
-    shortTitle: "Mary Trufel",
     description:
       "Страница избранного с персональным подбором платьев на основе предпочтений пользователя.",
     href: "/projects/mary-trufel/",
@@ -304,7 +300,6 @@ export const projects: Project[] = [
     slug: "peptidy",
     number: "04",
     title: "Peptid.ru",
-    shortTitle: "Peptid.ru",
     description:
       "Лендинг регистрации интернет-магазина пептидных препаратов с упрощенным входом в сервис.",
     href: "/projects/peptidy/",
