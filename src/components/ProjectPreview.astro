@@ -20,22 +20,6 @@ const { project } = Astro.props;
     </div>
   </div>
   <a class="project-visual" href={project.href} aria-label={`Открыть проект ${project.title}`}>
-    {
-      project.previewKind === "quiz" ? (
-        <div class="quiz-preview" aria-hidden="true">
-          <img src="/images/home/quiz-1.png" alt="" width="232" height="502" loading="lazy" />
-          <img src="/images/home/quiz-2.png" alt="" width="232" height="502" loading="lazy" />
-          <img src="/images/home/quiz-3.png" alt="" width="232" height="502" loading="lazy" />
-        </div>
-      ) : project.previewKind === "peptidy" ? (
-        <div class="peptidy-preview">
-          <div class="browser-shell browser-shell--in-card">
-            <img src={project.previewImage} alt={project.description} width="704" height="607" loading="lazy" />
-          </div>
-        </div>
-      ) : (
-        <img src={project.previewImage} alt={project.description} width="1086" height="724" loading={project.number === "01" ? "eager" : "lazy"} />
-      )
-    }
+    <img src={project.previewImage} alt={project.description} width="1086" height="724" loading={project.number === "01" ? "eager" : "lazy"} />
   </a>
 </article>

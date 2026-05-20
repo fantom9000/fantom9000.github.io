@@ -274,58 +274,6 @@ h3 {
   height: auto;
 }
 
-.quiz-preview {
-  display: flex;
-  height: 724px;
-  gap: 20px;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #d4d4d4;
-}
-
-.quiz-preview img {
-  width: min(23%, 232px);
-  height: auto;
-  border-radius: 18px;
-}
-
-.peptidy-preview {
-  display: grid;
-  height: 724px;
-  place-items: center;
-  background: #d4d4d4;
-}
-
-.browser-shell {
-  overflow: hidden;
-  border: 1px solid var(--color-surface);
-  border-radius: 0 0 6px 6px;
-  background: #fff;
-}
-
-.browser-shell::before {
-  display: block;
-  height: 22px;
-  border-radius: 6px 6px 0 0;
-  background:
-    radial-gradient(circle at 12px 50%, #c8c8c8 0 3px, transparent 3.5px),
-    radial-gradient(circle at 26px 50%, #c8c8c8 0 3px, transparent 3.5px),
-    radial-gradient(circle at 40px 50%, #c8c8c8 0 3px, transparent 3.5px),
-    var(--color-surface);
-  content: "";
-}
-
-.browser-shell--in-card {
-  width: min(724px, 82%);
-  max-height: 448px;
-}
-
-.browser-shell--in-card img {
-  width: 100%;
-  height: auto;
-}
-
 .welcome-work {
   display: block;
   width: 100%;
@@ -401,23 +349,6 @@ h3 {
   padding: 0 var(--pad) var(--space-case-block);
   flex-direction: column;
   align-items: flex-end;
-}
-
-.browser-chrome {
-  width: min(1086px, calc(100% - var(--sidebar)));
-  height: 33px;
-  padding: 12px 9px;
-  border-radius: 6px 6px 0 0;
-  background: var(--color-surface);
-}
-
-.browser-chrome span {
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  margin-right: 5px;
-  border-radius: 50%;
-  background: #c7c7c7;
 }
 
 .browser-image {
@@ -712,13 +643,6 @@ h3 {
     height: auto;
   }
 
-  .quiz-preview,
-  .peptidy-preview {
-    height: auto;
-    min-height: 0;
-    aspect-ratio: 1086 / 724;
-  }
-
   .browser-image {
     width: min(1086px, calc(100% - var(--sidebar)));
     height: auto;
@@ -857,19 +781,13 @@ h3 {
   }
 
   .project-visual > img,
-  .project-preview[data-project="burosfera"] .project-visual > img,
-  .quiz-preview,
-  .peptidy-preview {
+  .project-preview[data-project="burosfera"] .project-visual > img {
     height: auto;
     min-height: 0;
   }
 
   .project-visual {
     margin-top: 0;
-  }
-
-  .quiz-preview {
-    gap: 10px;
   }
 
   .browser-frame {

@@ -52,7 +52,6 @@ export type Project = {
   shortTitle: string;
   description: string;
   href: string;
-  previewKind: "image" | "quiz" | "peptidy";
   previewImage?: string;
   hero: string;
   lead: string;
@@ -68,7 +67,6 @@ export const projects: Project[] = [
     description:
       "Профессиональное сообщество и биржа дизайнеров, редакторов, руководителей и всех причастных к созданию продуктов.",
     href: "/projects/burosfera/",
-    previewKind: "image",
     previewImage: "/images/figma/high/previews/burosfera.webp",
     hero:
       "Биржа дизайнеров Бюро Горбунова — платформа для поиска работы и специалистов внутри профессионального сообщества.",
@@ -170,7 +168,6 @@ export const projects: Project[] = [
     description:
       "Мобильный квиз для подбора игр на основе стиля и предпочтений пользователя.",
     href: "/projects/quiz/",
-    previewKind: "image",
     previewImage: "/images/figma/high/previews/quiz.webp",
     hero:
       "Квиз для подбора мобильных игр — часть маркетинговой воронки SayGames, которая помогает привлекать пользователей.",
@@ -224,7 +221,6 @@ export const projects: Project[] = [
     description:
       "Страница избранного с персональным подбором платьев на основе предпочтений пользователя.",
     href: "/projects/mary-trufel/",
-    previewKind: "image",
     previewImage: "/images/figma/high/previews/mary-trufel.webp",
     hero:
       "Избранное в Mary Trufel — место, где невеста собирает понравившиеся платья, сравнивает их и в итоге выбирает одно.",
@@ -303,7 +299,6 @@ export const projects: Project[] = [
     description:
       "Лендинг регистрации интернет-магазина пептидных препаратов с упрощенным входом в сервис.",
     href: "/projects/peptidy/",
-    previewKind: "image",
     previewImage: "/images/figma/high/previews/peptidy.webp",
     hero:
       "Регистрационный лендинг для Peptid.ru последовательно объясняет условия программы и подводит к заполнению формы.",
