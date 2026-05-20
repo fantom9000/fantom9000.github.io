@@ -3,7 +3,7 @@ export const site = {
   title: "Дизайнер интерфейсов",
   contacts: {
     cv: "#cv-later",
-    telegram: "#telegram-later",
-    email: "mailto:mail@example.com"
+    telegram: "https://t.me/fantom9000",
+    email: "mailto:roman@zhalyalov.ru"
   }
 };
