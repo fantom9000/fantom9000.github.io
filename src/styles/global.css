@@ -696,6 +696,11 @@ h3 {
     row-gap: 0;
   }
 
+  .text-section h2,
+  .text-section p {
+    grid-column: 1;
+  }
+
   .text-section h2 {
     margin-bottom: 0.3em;
   }
