@@ -131,3 +131,17 @@ Proceed one step at a time. Good next candidates:
 3. Tune sidebar labels, using Artem Milovanov's CV as reference only for side-label presence/weight, not as a full style copy.
 4. Test `leadingTrim` on one duplicated frame only, not on the live CV.
 
+## When PDF is ready: place on the portfolio site
+
+When the CV is exported to PDF, host it directly on the portfolio:
+
+1. Export final PDF from Figma. Reasonable filename: `cv.pdf`.
+2. Place it at `public/cv.pdf` in this repo. After deploy it will be available at `https://fantom9000.github.io/cv.pdf`.
+3. Update `src/data/site.ts`: replace `cv: "#cv-later"` with `cv: "/cv.pdf"`. The Header and Footer "CV" link will start working immediately.
+4. Optional: open in a new tab with `target="_blank"` if Roman prefers that over inline navigation. Currently the Header/Footer use the default behavior.
+5. Optional: add `<meta name="robots" content="noindex">` headers via `_headers` (Cloudflare) or `robots.txt` rule `Disallow: /cv.pdf` if Roman does not want the PDF indexed by Google.
+6. Optional: keep older CV versions in `public/cv-archive/` if Roman wants to preserve revisions; not strictly needed.
+
+Re-export workflow:
+- Replace `public/cv.pdf` with the new file, commit, push. Live PDF updates within ~35 sec via GitHub Actions.
+
