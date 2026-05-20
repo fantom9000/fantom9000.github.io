@@ -10,7 +10,6 @@ export type CaseSection =
       body?: string;
       image: string;
       alt: string;
-      height?: number;
     }
   | {
       type: "mobilePair";
@@ -41,8 +40,6 @@ export type CaseSection =
       desktopAlt: string;
       mobileImage: string;
       mobileAlt: string;
-      desktopHeight?: number;
-      mobileHeight?: number;
     };
 
 export type Project = {
@@ -82,8 +79,7 @@ export const projects: Project[] = [
       {
         type: "browser",
         image: "/images/projects/burosfera/figma-sections/main-screen.webp",
-        alt: "Главный экран платформы Бюросфера",
-        height: 954
+        alt: "Главный экран платформы Бюросфера"
       },
       {
         type: "text",
@@ -109,7 +105,6 @@ export const projects: Project[] = [
         type: "browser",
         image: "/images/projects/burosfera/figma-sections/publish-overview.webp",
         alt: "Экран с условиями публикации вакансий в Бюросфере",
-        height: 817
       },
       {
         type: "text",
@@ -121,7 +116,6 @@ export const projects: Project[] = [
         type: "browser",
         image: "/images/projects/burosfera/figma-sections/vacancy-form.webp",
         alt: "Форма создания новой вакансии в Бюросфере",
-        height: 1234
       },
       {
         type: "text",
@@ -132,8 +126,7 @@ export const projects: Project[] = [
       {
         type: "browser",
         image: "/images/projects/burosfera/figma-sections/payment-summary.webp",
-        alt: "Экран выбора условий оплаты публикации вакансии",
-        height: 821
+        alt: "Экран выбора условий оплаты публикации вакансии"
       },
       {
         type: "text",
@@ -143,8 +136,7 @@ export const projects: Project[] = [
       {
         type: "browser",
         image: "/images/projects/burosfera/figma-sections/payment-modal.webp",
-        alt: "Модальное окно оплаты подписки Бюросферы",
-        height: 1310
+        alt: "Модальное окно оплаты подписки Бюросферы"
       },
       {
         type: "text",
@@ -235,8 +227,7 @@ export const projects: Project[] = [
       {
         type: "browser",
         image: "/images/projects/mary-trufel/figma-sections/context-empty.webp",
-        alt: "Страница избранного Mary Trufel",
-        height: 1362
+        alt: "Страница избранного Mary Trufel"
       },
       {
         type: "text",
@@ -249,9 +240,7 @@ export const projects: Project[] = [
         desktopImage: "/images/projects/mary-trufel/figma-sections/task-desktop.webp",
         desktopAlt: "Страница избранного Mary Trufel с сохраненными платьями",
         mobileImage: "/images/projects/mary-trufel/figma-sections/task-mobile.webp",
-        mobileAlt: "Мобильная страница избранного Mary Trufel",
-        desktopHeight: 964,
-        mobileHeight: 481
+        mobileAlt: "Мобильная страница избранного Mary Trufel"
       },
       {
         type: "text",
@@ -262,7 +251,6 @@ export const projects: Project[] = [
         type: "browser",
         image: "/images/projects/mary-trufel/figma-sections/recommendation-desktop.webp",
         alt: "Экран Mary Trufel с персональной подборкой платьев",
-        height: 1287
       },
       {
         type: "text",
@@ -275,8 +263,6 @@ export const projects: Project[] = [
         desktopAlt: "Страница избранного Mary Trufel со вставкой подбора от Феи",
         mobileImage: "/images/projects/mary-trufel/figma-sections/fairy-mobile.webp",
         mobileAlt: "Мобильная страница избранного Mary Trufel со вставкой подбора от Феи",
-        desktopHeight: 954,
-        mobileHeight: 481
       },
       {
         type: "imagePair",
@@ -314,8 +300,7 @@ export const projects: Project[] = [
       {
         type: "browser",
         image: "/images/projects/peptidy/figma-sections/main-screen.webp",
-        alt: "Лендинг программы лояльности Peptid.ru",
-        height: 2532
+        alt: "Лендинг программы лояльности Peptid.ru"
       },
       {
         type: "text",
