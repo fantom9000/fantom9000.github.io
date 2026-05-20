@@ -31,7 +31,7 @@ const { project } = Astro.props;
         if (section.type === "browser") {
           return (
             <>
-              {section.title && section.body && <TextSection title={section.title} body={section.body} />}
+              {section.body && <TextSection title={section.title} body={section.body} />}
               <BrowserFrame image={section.image} alt={section.alt} height={section.height} />
             </>
           );
@@ -39,7 +39,7 @@ const { project } = Astro.props;
         if (section.type === "mobilePair") {
           return (
             <>
-              {section.title && section.body && <TextSection title={section.title} body={section.body} />}
+              {section.body && <TextSection title={section.title} body={section.body} />}
               <MobileScreens images={section.images} alts={section.alts} />
             </>
           );
@@ -47,7 +47,7 @@ const { project } = Astro.props;
         if (section.type === "imagePair") {
           return (
             <>
-              {section.title && section.body && <TextSection title={section.title} body={section.body} />}
+              {section.body && <TextSection title={section.title} body={section.body} />}
               <ImagePair images={section.images} alts={section.alts} />
             </>
           );
@@ -55,7 +55,7 @@ const { project } = Astro.props;
         if (section.type === "wideImage") {
           return (
             <>
-              {section.title !== undefined && section.body && <TextSection title={section.title} body={section.body} />}
+              {section.body && <TextSection title={section.title} body={section.body} />}
               <figure class="case-wide-image">
                 <img src={section.image} alt={section.alt} loading="lazy" />
               </figure>
@@ -64,7 +64,7 @@ const { project } = Astro.props;
         }
         return (
           <>
-            {section.title !== undefined && section.body && <TextSection title={section.title} body={section.body} />}
+            {section.body && <TextSection title={section.title} body={section.body} />}
             <DesktopMobileScreens
               desktopImage={section.desktopImage}
               desktopAlt={section.desktopAlt}

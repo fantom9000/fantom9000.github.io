@@ -1,6 +1,6 @@
 ---
 type Props = {
-  title: string;
+  title?: string;
   body: string;
 };
 
@@ -8,6 +8,6 @@ const { title, body } = Astro.props;
 ---
 
 <section class="text-section">
-  <h2>{title}</h2>
+  {title && <h2>{title}</h2>}
   <p>{body}</p>
 </section>
