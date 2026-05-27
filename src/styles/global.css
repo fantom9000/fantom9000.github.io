@@ -141,6 +141,16 @@ h3 {
   text-underline-offset: 0.22em;
 }
 
+@media (hover: none) {
+  .contact-links a,
+  .project-preview h2 {
+    text-decoration: underline;
+    text-decoration-thickness: 0.5px;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 0.22em;
+  }
+}
+
 .site-name {
   width: fit-content;
   transition: opacity 0.2s ease;
