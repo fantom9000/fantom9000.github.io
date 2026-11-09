@@ -697,7 +697,10 @@ h3 {
     grid-row: unset;
   }
 
-  .side-work,
+  .side-work {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .text-section {
     grid-template-columns: 1fr;
   }
